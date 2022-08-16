@@ -30,17 +30,21 @@ li {
   <script>
     var sound = new buzz.sound('../tests/fixtures/old.mp3')
     var sound2 = new buzz.sound('../tests/fixtures/new.mp3')
+    console.log('sound.getDuration()', sound.getDuration())
+    console.log('sound2.getDuration()', sound2.getDuration())
     var btn1 = document.getElementById('playOldBtn')
     var btn2 = document.getElementById('playNewBtn')
     btn1.onclick = function() {
       sound2.stop()
       btn1.innerText = 'playing...'
+      console.log('onclick sound.duration', sound.getDuration())
       sound.play()
       btn2.innerText = 'Play New'
     };
     btn2.onclick = function() {
       sound.stop()
       btn2.innerText = 'playing...'
+      console.log('onclick sound2.duration', sound2.getDuration())
       sound2.play()
       btn1.innerText = 'Play Old'
     };
