@@ -4,25 +4,45 @@
   <meta charset="UTF-8">
   <title>Buzz.js Example</title>
   <script src="../dist/buzz.js"></script>
+  <style>
+ul {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+li {
+  width: 100%;
+  margin: 10px auto;
+  list-style: none;
+}
+  </style>
 </head>
 <body>
   <ul>
     <li>
-      <button id="playOldBtn">Play</button>
+      <button id="playOldBtn">Play Old</button>
     </li>
     <li>
-      <button id="playNewBtn">Play</button>
+      <button id="playNewBtn">Play New</button>
     </li>
   </ul>
-  
   <script>
     var sound = new buzz.sound('../tests/fixtures/old.mp3')
     var sound2 = new buzz.sound('../tests/fixtures/new.mp3')
-    document.getElementById('playOldBtn').onclick = function() {
+    var btn1 = document.getElementById('playOldBtn')
+    var btn2 = document.getElementById('playNewBtn')
+    btn1.onclick = function() {
+      sound2.stop()
+      btn1.innerText = 'playing...'
       sound.play()
+      btn2.innerText = 'Play New'
     };
-    document.getElementById('playNewBtn').onclick = function() {
+    btn2.onclick = function() {
+      sound.stop()
+      btn2.innerText = 'playing...'
       sound2.play()
+      btn1.innerText = 'Play Old'
     };
   </script>
 </body>
