@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Buzz.js Example</title>
+  <script src="../dist/buzz.js"></script>
+</head>
+<body>
+  <ul>
+    <li>
+      <button id="playOldBtn">Play</button>
+    </li>
+    <li>
+      <button id="playNewBtn">Play</button>
+    </li>
+  </ul>
+  
+  <script>
+    var sound = new buzz.sound('../tests/fixtures/old.mp3')
+    var sound2 = new buzz.sound('../tests/fixtures/new.mp3')
+    document.getElementById('playOldBtn').onclick = function() {
+      sound.play()
+    };
+    document.getElementById('playNewBtn').onclick = function() {
+      sound2.play()
+    };
+  </script>
+</body>
+</html>
