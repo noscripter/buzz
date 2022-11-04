@@ -8,6 +8,9 @@ module.exports = {
   'parserOptions': {
     'ecmaVersion': 'latest'
   },
+  'globals': {
+    'define': 'readonly'
+  },
   'rules': {
   }
 }

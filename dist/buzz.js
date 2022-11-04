@@ -511,7 +511,7 @@
             }
             if (supported && src) {
                 for (var i in buzz.defaults) {
-                    if (buzz.defaults.hasOwnProperty(i)) {
+                    if (Object.prototype.hasOwnProperty.call(buzz.defaults, i)) {
                         if (options[i] === undefined) {
                             options[i] = buzz.defaults[i];
                         }
@@ -530,13 +530,13 @@
                 }
                 if (src instanceof Array) {
                     for (var j in src) {
-                        if (src.hasOwnProperty(j)) {
+                        if (Object.prototype.hasOwnProperty.call(src, j)) {
                             this.addSource(src[j]);
                         }
                     }
                 } else if (options.formats.length) {
                     for (var k in options.formats) {
-                        if (options.formats.hasOwnProperty(k)) {
+                        if (Object.prototype.hasOwnProperty.call(options.formats, k)) {
                             this.addSource(src + "." + options.formats[k]);
                         }
                     }
