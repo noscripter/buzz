@@ -9,7 +9,14 @@ module.exports = {
     'ecmaVersion': 'latest'
   },
   'globals': {
-    'define': 'readonly'
+    'define': 'readonly',
+    'describe': 'readonly',
+    'it': 'readonly',
+    'afterEach': 'readonly',
+    'beforeEach': 'readonly',
+    'jasmine': 'readonly',
+    'expect': 'readonly',
+    'buzz': 'writable'
   },
   'rules': {
   }
